@@ -22,4 +22,4 @@ spec:
   tls:
   - hosts:
     - angular.magnifikboutique.online
-    secretName: angular-tls # do not change, this is provided by Argo CD
+    secretName: angular-tls
