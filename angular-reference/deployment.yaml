@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: angular
-        image: magnifikacr.azurecr.io/reference-angular:develop-b4697712-20 # {"$imagepolicy": "flux-system:angular"}
+        image: magnifikacr.azurecr.io/reference-angular:develop-ab2f39e0-21 # {"$imagepolicy": "flux-system:angular"}
         resources:
           limits:
             memory: "512Mi"
