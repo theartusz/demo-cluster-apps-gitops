@@ -18,8 +18,8 @@ spec:
               number: 8080
         pathType: Prefix
         path: /
-    host: angular.magnifikboutique.online
+    host: angular.magnifikbutik.eu
   tls:
   - hosts:
-    - angular.magnifikboutique.online
+    - angular.magnifikbutik.eu
     secretName: angular-tls
