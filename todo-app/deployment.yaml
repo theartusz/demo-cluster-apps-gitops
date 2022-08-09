@@ -24,4 +24,4 @@ spec:
         ports:
         - containerPort: 3000 # it doesnt really matter - port-forward or service should point to port 80 where nginx is listening
       imagePullSecrets:
-      - name: acr-cred
+      - name: container-registry-cred
