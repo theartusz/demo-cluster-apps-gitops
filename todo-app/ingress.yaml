@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo
+  namespace: todo
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: todo
+            port:
+              number: 3000
+        pathType: Prefix
+        path: /
+    host: todo.magnifikbutik.eu
+  tls:
+  - hosts:
+    - todo.magnifikbutik.eu
+    secretName: angular-tls

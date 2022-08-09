@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo
+  namespace: todo
+  labels:
+    app: todo
+spec:
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      containers:
+      - name: todo
+        image: 564173771488.dkr.ecr.eu-north-1.amazonaws.com/example:todo_app_1 # {"$imagepolicy": "flux-system:angular"}
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000 # it doesnt really matter - port-forward or service should point to port 80 where nginx is listening
+      imagePullSecrets:
+      - name: acr-cred
